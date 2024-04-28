@@ -19,7 +19,12 @@ const MyArtList = () => {
       <h1>All Art And Craft List</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <ItemsCard key={item._id} item={item} />
+          <ItemsCard
+            key={item._id}
+            item={item}
+            items={items}
+            setItems={setItems}
+          />
         ))}
       </div>
     </div>
