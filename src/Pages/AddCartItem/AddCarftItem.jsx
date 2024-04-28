@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProviders/AuthProvider";
+import { toast } from "react-toastify";
 
 const AddCarftItem = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCustomize, setSelectedCustomize] = useState("");
   const [selectedStocks, setSelectedStocks] = useState("");
+  const { user } = useContext(AuthContext);
 
   const handleChangeCategory = (e) => {
     setSelectedCategory(e.target.value);
@@ -53,20 +56,19 @@ const AddCarftItem = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("item is added");
+          toast.success("Added Item Successfully");
         }
       });
   };
   return (
     <div className="flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-4/5 ">
-       
         <div className="bg-[#E8F0FE]  my-24 rounded-xl shadow-xl">
-        <div className="pl-6 pt-10">
-        <h3 className="text-3xl mb-4 text-[#000000ca] font-bold">
-          Add Craft and Item
-        </h3>
-        </div>
+          <div className="pl-6 pt-10">
+            <h3 className="text-3xl mb-4 text-[#000000ca] font-bold">
+              Add Craft and Item
+            </h3>
+          </div>
           <div className="flex  gap-x-4 p-6">
             <div className="w-full">
               <label className="font-bold text-gray-700" htmlFor="">
@@ -82,7 +84,9 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">Item Name:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Item Name:
+              </label>
               <br />
               <input
                 type="text"
@@ -93,7 +97,9 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">Subcategory Name:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Subcategory Name:
+              </label>
               <br />
 
               <select
@@ -102,7 +108,7 @@ const AddCarftItem = () => {
                 onChange={handleChangeCategory}
               >
                 <option disabled selected value={""}>
-                 Select Option
+                  Select Option
                 </option>
                 <option value={"embroidery"}>Embroidery</option>
                 <option value={"knittingandcrocheting"}>
@@ -117,7 +123,9 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">Price:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Price:
+              </label>
               <br />
               <input
                 type="text"
@@ -128,7 +136,9 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">Rating:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Rating:
+              </label>
               <br />
               <input
                 type="text"
@@ -140,7 +150,9 @@ const AddCarftItem = () => {
               <br />
             </div>
             <div className="w-full">
-              <label className="font-bold text-gray-700" htmlFor="">Customization:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Customization:
+              </label>
               <br />
 
               <select
@@ -158,7 +170,9 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">Processing Time:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Processing Time:
+              </label>
               <br />
               <input
                 type="text"
@@ -169,7 +183,9 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">Stock Status:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                Stock Status:
+              </label>
               <br />
 
               <select
@@ -187,10 +203,13 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">User Email:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                User Email:
+              </label>
               <br />
               <input
                 type="email"
+                defaultValue={user.email}
                 name="email"
                 className="w-full p-2 outline-none rounded-lg text-[#000000dc] bg-[#F8F8F8]"
                 placeholder="user email"
@@ -198,10 +217,13 @@ const AddCarftItem = () => {
               <br />
               <br />
 
-              <label className="font-bold text-gray-700" htmlFor="">User Name:</label>
+              <label className="font-bold text-gray-700" htmlFor="">
+                User Name:
+              </label>
               <br />
               <input
                 type="text"
+                defaultValue={user.displayName}
                 name="userName"
                 className="w-full p-2 outline-none rounded-lg text-[#000000dc] bg-[#F8F8F8]"
                 placeholder="user name"
@@ -212,7 +234,9 @@ const AddCarftItem = () => {
           </div>
 
           <div className="px-6">
-            <label className="font-bold text-gray-700" htmlFor="">Short Description:</label>
+            <label className="font-bold text-gray-700" htmlFor="">
+              Short Description:
+            </label>
             <br />
             <textarea
               name="shortDescription"

@@ -8,6 +8,7 @@ import MyArtList from "../Pages/MyArtList/MyArtList";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import PrivateRoutes from "../PrivateRouters/PrivateRoutes";
+import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       {
         path: "/allArtAndCraft",
         element: <AllArtAndCraft />,
+        loader: () => fetch("http://localhost:5000/item"),
       },
       {
         path: "/addCraftItem",
@@ -39,6 +41,16 @@ export const router = createBrowserRouter([
             <MyArtList />
           </PrivateRoutes>
         ),
+      },
+
+      {
+        path: "/detailspage/:id",
+        element: (
+          <PrivateRoutes>
+            <DetailsPage />
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("http://localhost:5000/item"),
       },
       {
         path: "/register",
