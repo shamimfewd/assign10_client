@@ -1,10 +1,20 @@
+import { useLoaderData } from "react-router-dom";
+import CraftItems from "../../Components/CraftItems";
 import Hero from "../../Components/Hero";
+import { useState } from "react";
 
 const Home = () => {
+  const loadedData = useLoaderData();
+  const [items, setItems] = useState(loadedData);
+  console.log(loadedData);
   return (
     <div>
       <Hero />
-      <h1>this is home page</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {items.map((item) => (
+          <CraftItems key={item._id} item={item} />
+        ))}
+      </div>
     </div>
   );
 };

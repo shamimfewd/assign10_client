@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import PrivateRoutes from "../PrivateRouters/PrivateRoutes";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
+import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:5000/item"),
       },
       {
         path: "/allArtAndCraft",
@@ -59,6 +61,17 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+
+      {
+        path: "/updatePage/:id",
+        element: (
+          <PrivateRoutes>
+            <UpdatePage />
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/itemData/${params.id}`),
       },
     ],
   },

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
@@ -8,11 +8,17 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const { logInUser, GoogleLogIn, githubLogIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleGoogleLogIn = () => {
     GoogleLogIn()
-      .then(() => {
-        toast.success("Login Successfully");
+      .then((result) => {
+        if (result.user) {
+          toast.success("Login Successfully");
+          navigate(location?.state || "/");
+        }
+       
       })
       .catch((error) => {
         console.log(error);
@@ -22,7 +28,10 @@ const Login = () => {
   const handleGithubLogIn = () => {
     githubLogIn()
       .then((result) => {
-        console.log(result);
+        if (result.user) {
+          navigate(location?.state || "/");
+          toast.success("Login Successfully");
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -35,12 +44,13 @@ const Login = () => {
 
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     const { email, password } = data;
-    console.log(data);
+    
     logInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        navigate(location?.state || "/");
       })
       .catch((error) => {
         console.log(error);
