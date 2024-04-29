@@ -17,6 +17,7 @@ const ItemsCard = ({ item, items, setItems, setFilterItems }) => {
     selectedCustomize,
   } = item;
   setFilterItems(selectedCustomize);
+  
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",

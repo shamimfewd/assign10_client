@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
-import ItemsCard from "../../Components/ItemsCard";
+// import ItemsCard from "../../Components/ItemsCard";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -8,8 +8,8 @@ const MyArtList = () => {
   const { user } = useContext(AuthContext);
   const [items, setItems] = useState([]);
   const [filterItmes, setFilterItems] = useState([]);
-  console.log(items);
 
+  // Filter by Customization--------------
   const handleFilterItems = (filter) => {
     if (filter === "all") {
       setFilterItems(items);
@@ -21,17 +21,6 @@ const MyArtList = () => {
       setFilterItems(noItems);
     }
   };
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/item/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setItems(data);
-        setFilterItems(data);
-      });
-  }, [user]);
-
-
 
   // Delete Function------------------
   const handleDelete = (_id) => {
@@ -58,19 +47,29 @@ const MyArtList = () => {
               });
 
               const remainingItem = items.filter((itm) => itm._id !== _id);
-              setItems(remainingItem);
+              setFilterItems(remainingItem);
             }
-            console.log(data);
+         
           });
       }
     });
   };
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/item/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setItems(data);
+        setFilterItems(data);
+      });
+  }, [user]);
+
   return (
     <div>
+    {/* Dropdown for filtering */}
       <div className="text-center">
         <details className="dropdown">
-          <summary className="m-1 btn">open or close</summary>
+          <summary className="m-1 btn">Filter By Customization Advantage</summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li onClick={() => handleFilterItems("all")}>
               <a>All</a>
@@ -121,7 +120,7 @@ const MyArtList = () => {
           //   item={item}
           //   items={items}
           //   setItems={setItems}
-          //   setFilterItems={setFilterItems}
+       
           // />
         ))}
       </div>
