@@ -51,14 +51,14 @@ const AuthProvider = ({ children }) => {
   // log ing google
   const GoogleLogIn = () => {
     setLoading(true);
-    signInWithPopup(auth, googleProvider);
+   return signInWithPopup(auth, googleProvider);
   };
 
   // log in github
 
   const githubLogIn = () => {
     setLoading(true);
-    signInWithPopup(auth, githubProvider);
+   return signInWithPopup(auth, githubProvider);
   };
 
   //   observer

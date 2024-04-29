@@ -6,7 +6,7 @@ import { useState } from "react";
 const Home = () => {
   const loadedData = useLoaderData();
   const [items, setItems] = useState(loadedData);
-  console.log(loadedData);
+
   return (
     <div>
       <Hero />

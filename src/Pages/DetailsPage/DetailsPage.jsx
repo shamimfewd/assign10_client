@@ -2,12 +2,11 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const DetailsPage = () => {
   const loadedData = useLoaderData();
-  const { _id } = useParams();
+  const { id } = useParams();
 
-  const currentItem = loadedData.find((item) => item.id === _id);
+  const currentItem = loadedData.find((item) => item._id === id);
   const { image, itemName, price, rating, shortDescription } = currentItem;
 
-  console.log(currentItem);
   return (
     <div>
       <h1>this is details page</h1>

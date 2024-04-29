@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const CraftItems = ({ item }) => {
   const { _id, image, itemName, price, shortDescription } = item;
 
-  console.log(item);
+  
   return (
     <div>
       <h1>this is craft item</h1>
