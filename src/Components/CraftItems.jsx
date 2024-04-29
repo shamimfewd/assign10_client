@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CraftItems = ({ item }) => {
-  const { _id, image, itemName, price, shortDescription } = item;
+  const { _id, image, itemName, price, shortDescription,selectedCustomize } = item;
 
   
   return (

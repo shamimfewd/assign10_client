@@ -2,7 +2,9 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const ItemsCard = ({ item, items, setItems }) => {
+const ItemsCard = ({ item, items, setItems, setFilterItems }) => {
+  // console.log(item.selectedCustomize);
+
   const {
     _id,
     image,
@@ -12,8 +14,9 @@ const ItemsCard = ({ item, items, setItems }) => {
     shortDescription,
     userName,
     email,
+    selectedCustomize,
   } = item;
-
+  setFilterItems(selectedCustomize);
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -54,11 +57,9 @@ const ItemsCard = ({ item, items, setItems }) => {
           <h2 className="card-title">{itemName}</h2>
           <h3>{price}</h3>
           <p>{shortDescription}</p>
-          <div className="card-actions justify-end">
-            {/* <Link to={`/detailspage/${_id}`}>
-              <button className="btn ">View Details</button>
-            </Link> */}
+          <p>{selectedCustomize}</p>
 
+          <div className="card-actions justify-end">
             <button onClick={() => handleDelete(_id)} className="btn">
               Delete
             </button>

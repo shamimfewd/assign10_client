@@ -214,7 +214,7 @@ const UpdatePage = () => {
                 onChange={handleChangeStock}
               >
                 <option disabled selected value={""}>
-                  Stock Status
+                Select Option
                 </option>
                 <option value={"inStock"}>In Stock</option>
                 <option value={"madeToOrder"}>Made to Order</option>
