@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import image from "../../public/logo.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -8,6 +9,10 @@ const Header = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+
+  const activeLink = "text-[#01EEFF] ";
+  const normalLink = "";
+
   const handleChangeTheme = (e) => {
     if (e.target.checked) {
       setTheme("dark");
@@ -33,8 +38,8 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="">
+      <div className="navbar bg-[#0A2D45] py-4 px-6 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,78 +60,162 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <NavLink to={"/"}>Home</NavLink>
+                <NavLink
+                  to={"/"}
+                  style={{ fontSize: "16px" }}
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
 
               <li>
-                <NavLink to={"/allArtAndCraft"}>All Art & craft Items</NavLink>
+                <NavLink
+                  to={"/allArtAndCraft"}
+                  style={{ fontSize: "16px" }}
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  All Art & craft Items
+                </NavLink>
               </li>
 
               {user && (
                 <li>
-                  <NavLink to={"/addCraftItem"}>Add Craft Item</NavLink>
+                  <NavLink
+                    to={"/addCraftItem"}
+                    style={{ fontSize: "16px" }}
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
+                    }
+                  >
+                    Add Craft Item
+                  </NavLink>
                 </li>
               )}
 
               {user && (
                 <li>
-                  <NavLink to={"/myArt&CraftList"}>My Art&Craft List</NavLink>
+                  <NavLink
+                    to={"/myArt&CraftList"}
+                    style={{ fontSize: "16px" }}
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
+                    }
+                  >
+                    My Art&Craft List
+                  </NavLink>
                 </li>
               )}
               <li>
-                <NavLink to={"/register"}>Register</NavLink>
+                <NavLink
+                  to={"/register"}
+                  style={{ fontSize: "16px" }}
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  Register
+                </NavLink>
               </li>
             </ul>
           </div>
-          <Link to={"/"} className="btn btn-ghost text-xl">
-            TextileTrove
+          <Link
+            to={"/"}
+            className=" font-extrabold   text-3xl"
+          >
+            <span className="text-[#fff] text-3xl">
+              Textile <span className="text-[#01EEFF]">Trove</span>{" "}
+            </span>
           </Link>
-        
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 text-[#ffff]">
             <li>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink
+                to={"/"}
+                style={{ fontSize: "18px" }}
+                className={({ isActive }) =>
+                  isActive ? activeLink : normalLink
+                }
+              >
+                Home
+              </NavLink>
             </li>
 
             <li>
-              <NavLink to={"/allArtAndCraft"}>All Art & craft Items</NavLink>
+              <NavLink
+                to={"/allArtAndCraft"}
+                style={{ fontSize: "18px" }}
+                className={({ isActive }) =>
+                  isActive ? activeLink : normalLink
+                }
+              >
+                All Art & craft Items
+              </NavLink>
             </li>
 
             {user && (
               <li>
-                <NavLink to={"/addCraftItem"}>Add Craft Item</NavLink>
+                <NavLink
+                  to={"/addCraftItem"}
+                  style={{ fontSize: "18px" }}
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  Add Craft Item
+                </NavLink>
               </li>
             )}
 
             {user && (
               <li>
-                <NavLink to={"/myArt&CraftList"}>My Art&Craft List</NavLink>
+                <NavLink
+                  to={"/myArt&CraftList"}
+                  style={{ fontSize: "18px" }}
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                >
+                  My Art & Craft List
+                </NavLink>
               </li>
             )}
 
             <li>
-              <NavLink to={"/register"}>Register</NavLink>
+              <NavLink
+                to={"/register"}
+                style={{ fontSize: "18px" }}
+                className={({ isActive }) =>
+                  isActive ? activeLink : normalLink
+                }
+              >
+                Register
+              </NavLink>
             </li>
-          
           </ul>
         </div>
         <div className="navbar-end">
           <div>
-            <label className="swap swap-rotate">
+            <label className="swap swap-rotate  pr-6">
               {/* this hidden checkbox controls the state */}
               <input
                 type="checkbox"
                 checked={theme === "light" ? false : true}
                 onChange={handleChangeTheme}
+               
               />
 
               {/* sun icon */}
               <svg
-                className="swap-on fill-current w-10 h-10"
+                className="swap-on  fill-current w-9 h-9"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -135,7 +224,7 @@ const Header = () => {
 
               {/* moon icon */}
               <svg
-                className="swap-off fill-current w-10 h-10"
+                className="swap-off fill-current text-[#ffffffe4] w-9 h-9"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -146,7 +235,7 @@ const Header = () => {
           {user ? (
             <>
               <div
-                className="tooltip tooltip-bottom"
+                className="tooltip tooltip-bottom pr-4"
                 data-tip={user?.displayName || "Name not found"}
               >
                 <img
@@ -159,13 +248,13 @@ const Header = () => {
                 />
               </div>
 
-              <button onClick={handleLogOut} className="btn">
+              <button onClick={handleLogOut} className="btn text-lg">
                 Log Out
               </button>
             </>
           ) : (
             <Link to={"/login"}>
-              <button className="btn">LogIn</button>
+              <button className="btn text-lg">LogIn</button>
             </Link>
           )}
         </div>
