@@ -248,13 +248,13 @@ const Header = () => {
                 />
               </div>
 
-              <button onClick={handleLogOut} className="btn text-lg">
+              <button onClick={handleLogOut} className="btn text-lg bg-[#fc1414d6] border-none text-white">
                 Log Out
               </button>
             </>
           ) : (
             <Link to={"/login"}>
-              <button className="btn text-lg">LogIn</button>
+              <button className="btn text-lg bg-[#01EEFF] border-none">LogIn</button>
             </Link>
           )}
         </div>
