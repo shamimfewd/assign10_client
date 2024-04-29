@@ -5,11 +5,18 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
+import { FaRegEyeSlash } from "react-icons/fa6";
+import { FaRegEye } from "react-icons/fa6";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [registerError, setRegisterError] = useState("");
+
+  const [showPas, setShowPas] = useState(true);
+  const handleClick = () => {
+    setShowPas(!showPas);
+  };
   const {
     register,
     handleSubmit,
@@ -50,7 +57,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center ">
-       <Helmet>
+      <Helmet>
         <title>TextileTrove - Register</title>
       </Helmet>
       <div className="my-24 border p-6 rounded-xl lg:w-1/3 shadow-xl bg-[#E8F0FE]">
@@ -86,12 +93,22 @@ const Register = () => {
           <br />
 
           <label htmlFor="">Password:</label>
-          <input
-            type="password"
-            className="input w-full mt-2 border-b-2 py-2 px-1 rounded-lg outline-none text-[#000000d4] "
-            placeholder="password"
-            {...register("password", { required: true })}
-          />
+          <div className="relative">
+            <input
+              type={showPas ? "password" : "text"}
+              className="input w-full mt-2 border-b-2 py-2 px-1 rounded-lg outline-none text-[#000000d4] "
+              placeholder="password"
+              {...register("password", { required: true })}
+            />
+
+            <span
+              onClick={handleClick}
+              className="text-2xl   absolute right-4 top-5 cursor-pointer"
+            >
+              {showPas ? <FaRegEyeSlash /> : <FaRegEye />}
+            </span>
+          </div>
+
           {errors.password && (
             <span className="text-orange-600 mt-2">This field is required</span>
           )}

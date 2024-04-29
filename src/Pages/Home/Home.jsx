@@ -3,10 +3,12 @@ import CraftItems from "../../Components/CraftItems";
 import Hero from "../../Components/Hero";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import SubCategory from "../../Components/SubCategory";
 
 const Home = () => {
   const loadedData = useLoaderData();
   const [items, setItems] = useState(loadedData);
+  
 
   return (
     <div>
@@ -19,6 +21,7 @@ const Home = () => {
           <CraftItems key={item._id} item={item} />
         ))}
       </div>
+      <SubCategory />
     </div>
   );
 };

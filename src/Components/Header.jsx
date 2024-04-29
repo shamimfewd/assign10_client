@@ -111,9 +111,7 @@ const Header = () => {
             <li>
               <NavLink to={"/register"}>Register</NavLink>
             </li>
-            {/* <li>
-              <NavLink to={"/login"}>  </NavLink>
-            </li> */}
+          
           </ul>
         </div>
         <div className="navbar-end">

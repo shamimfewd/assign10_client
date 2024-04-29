@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import PrivateRoutes from "../PrivateRouters/PrivateRoutes";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import UpdatePage from "../Pages/UpdatePage/UpdatePage";
+import SubCategory from "../Components/SubCategory";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,12 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/itemData/${params.id}`),
+      },
+
+      {
+        path: "/subCategory",
+        element: <SubCategory />,
+        loader: () => fetch("http://localhost:5000/cate"),
       },
     ],
   },
