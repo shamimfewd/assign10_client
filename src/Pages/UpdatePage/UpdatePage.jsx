@@ -3,6 +3,7 @@
 import { toast } from "react-toastify";
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const UpdatePage = () => {
   const loadedData = useLoaderData();
@@ -77,6 +78,9 @@ const UpdatePage = () => {
   };
   return (
     <div className="flex items-center justify-center">
+       <Helmet>
+        <title>TextileTrove - Update Craft</title>
+      </Helmet>
       <form onSubmit={handleSubmit} className="w-4/5 ">
         <div className="bg-[#E8F0FE]  my-24 rounded-xl shadow-xl">
           <div className="pl-6 pt-10">

@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import CraftItems from "../../Components/CraftItems";
 import Hero from "../../Components/Hero";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const loadedData = useLoaderData();
@@ -9,6 +10,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>TextileTrove - Home</title>
+      </Helmet>
       <Hero />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item) => (

@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { logInUser, GoogleLogIn, githubLogIn } = useContext(AuthContext);
@@ -60,6 +61,9 @@ const Login = () => {
   return (
     <div>
       <div className="flex justify-center items-center ">
+      <Helmet>
+        <title>TextileTrove - LongIn</title>
+      </Helmet>
         <div className="my-24 border p-6 rounded-xl lg:w-1/3 shadow-xl bg-[#E8F0FE]">
           <h3 className="text-3xl mb-6 text-[#000000ca] font-bold">
             LogIn Form

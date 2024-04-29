@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const AddCarftItem = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -62,6 +63,9 @@ const AddCarftItem = () => {
   };
   return (
     <div className="flex items-center justify-center">
+       <Helmet>
+        <title>TextileTrove - Add Craft</title>
+      </Helmet>
       <form onSubmit={handleSubmit} className="w-4/5 ">
         <div className="bg-[#E8F0FE]  my-24 rounded-xl shadow-xl">
           <div className="pl-6 pt-10">

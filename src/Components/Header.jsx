@@ -79,12 +79,12 @@ const Header = () => {
               <li>
                 <NavLink to={"/register"}>Register</NavLink>
               </li>
-              {/* <li>
-                <NavLink to={"/login"}>Login</NavLink>
-              </li> */}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link to={"/"} className="btn btn-ghost text-xl">
+            TextileTrove
+          </Link>
+        
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 // import ItemsCard from "../../Components/ItemsCard";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyArtList = () => {
   const { user } = useContext(AuthContext);
@@ -66,6 +67,9 @@ const MyArtList = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>TextileTrove - My Craft List</title>
+      </Helmet>
     {/* Dropdown for filtering */}
       <div className="text-center">
         <details className="dropdown">

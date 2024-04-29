@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const DetailsPage = () => {
@@ -9,6 +10,9 @@ const DetailsPage = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>TextileTrove - Craft Details</title>
+      </Helmet>
       <h1>this is details page</h1>
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>

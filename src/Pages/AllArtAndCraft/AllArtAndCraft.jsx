@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import ItemsCard from "../../Components/ItemsCard";
+import { Helmet } from "react-helmet";
 
 const AllArtAndCraft = () => {
   const loadedData = useLoaderData();
@@ -8,6 +9,9 @@ const AllArtAndCraft = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
+       <Helmet>
+        <title>TextileTrove - All Craft</title>
+      </Helmet>
       <div className="bg-[#E8F0FE] my-24 p-6 rounded-xl">
         <div>
           <h1 className="text-3xl font-bold text-center my-6">
