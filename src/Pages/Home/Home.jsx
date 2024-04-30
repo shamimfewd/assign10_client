@@ -12,6 +12,7 @@ const Home = () => {
   const loadedData = useLoaderData();
   const { loading } = useContext(AuthContext);
   const [items, setItems] = useState(loadedData);
+
   if (loading) {
     return (
       <div className="flex justify-center items-center">
