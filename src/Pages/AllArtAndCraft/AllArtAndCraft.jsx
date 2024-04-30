@@ -40,12 +40,12 @@ const AllArtAndCraft = () => {
           </h1>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto -px-6">
           <table className="table">
             {/* head */}
             <thead>
               <tr>
-                <th></th>
+                
                 <th className="font-bold text-lg">Item Name</th>
                 <th className="font-bold text-lg">Price</th>
                 <th className="font-bold text-lg">Category</th>
@@ -54,7 +54,7 @@ const AllArtAndCraft = () => {
             <tbody>
               {items.map((item) => (
                 <tr key={item._id}>
-                  <th></th>
+                
                   <td>{item.itemName}</td>
                   <td>{item.price}</td>
                   <td>{item.selectedCategory}</td>

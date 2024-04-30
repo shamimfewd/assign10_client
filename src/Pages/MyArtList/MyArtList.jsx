@@ -115,7 +115,7 @@ const MyArtList = () => {
         <h2 className="text-4xl text-[#0A2D45] mb-6">My Art And Craft List</h2>
       </div>
 
-      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
+      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 p-2">
         {filterItmes.map((item) => (
           <div key={item._id} className="">
             <div className="card h-[35rem] cursor-pointer bg-base-100 shadow-xl">

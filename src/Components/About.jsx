@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="my-24 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div className="my-24 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:p-4 p-2">
         <div>
           <img
             className="rounded-2xl h-[40rem] w-[40rem] object-cover"
@@ -14,17 +14,15 @@ const About = () => {
             <h2 className="text-4xl text-[#0A2D45] mb-6">Who We Are</h2>
           </div>
           <h3 className="text-2xl tracking-wider">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-            dicta.
+            Textile Wonders Weaving Stories of Fashion, Quality, and Creativity!
           </h3>
           <hr />
           <p className=" tracking-wider mt-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
-            natus unde iure quibusdam deleniti aperiam magni quis voluptatem
-            repellat illum libero ut, incidunt, praesentium sint ea officia ipsa
-            id officiis vitae aspernatur sequi cumque, est suscipit mollitia?
-            Sunt placeat non maxime deserunt nobis, ratione eius fuga libero
-            distinctio repellendus impedit.
+            Step into a realm where threads intertwine to create tales of style
+            and sophistication. Our textile wonders showcase a symphony of
+            craftsmanship, blending quality materials with boundless creativity.
+            Explore a world where every fabric tells a story, weaving narratives
+            of fashion, elegance, and timeless allure.
           </p>
 
           <hr />

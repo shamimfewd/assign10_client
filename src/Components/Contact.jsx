@@ -1,8 +1,4 @@
-import { useContext } from "react";
-import { AuthContext } from "../AuthProviders/AuthProvider";
-
 const Contact = () => {
-  const { user } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,7 +29,7 @@ const Contact = () => {
             Bangladesh.
           </p>
         </div>
-        {/* className="bg-[#FFFFFF]" */}
+
         <div className="p-4">
           <form onSubmit={handleSubmit}>
             <label htmlFor="">Full Name</label>
@@ -41,7 +37,6 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              defaultValue={user.displayName}
               className="p-2 rounded-lg w-full"
               placeholder="full name"
             />
@@ -53,7 +48,6 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              defaultValue={user.email}
               className="p-2 rounded-lg w-full"
               placeholder="exemple@xyz.com"
             />

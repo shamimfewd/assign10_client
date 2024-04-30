@@ -1,3 +1,4 @@
+import { Typewriter } from "react-simple-typewriter";
 const Hero = () => {
   return (
     <div>
@@ -10,17 +11,31 @@ const Hero = () => {
           }}
           className="carousel-item relative w-full bg-no-repeat bg-cover"
         >
-          <img src="" className="w-full h-[100vh] object-cover" />
+          <img src="" className="w-full lg:h-[100vh] h-[70vh] object-cover" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
+            <a href="#slide2" className="btn btn-circle">
               ❮
             </a>
 
             <div>
-              <h1 className="text-center text-6xl mb-4 font-extrabold text-[#fff]">
-                Discover the Latest Trends in Textiles!
+             
+
+              <h1 className="text-center text-3xl md:text-4xl lg:text-6xl mb-4 font-extrabold text-[#fff]">
+              <span style={{ color: "red", fontWeight: "bold" }}>
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                  words={["Discover the Latest Trends in Textiles!"]}
+                  loop={5}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+                {/* Discover the Latest Trends in Textiles! */}
               </h1>
-              <h4 className="leading-10 text-3xl w-3/4 mx-auto text-center text-[#ffffffdf]">
+              <h4 className="lg:leading-10 lg:text-3xl w-3/4 mx-auto text-center text-[#ffffffdf]">
                 Stay Ahead with Our Textile Trend Insights: Explore the Latest
                 Innovations and Styles Setting the Pace in the Dynamic World of
                 Fabrics and Fashion.
@@ -40,13 +55,25 @@ const Hero = () => {
           className="carousel-item relative w-full bg-no-repeat bg-cover "
         >
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
+            <a href="#slide3" className="btn btn-circle">
               ❮
             </a>
 
             <div>
-              <h1 className="text-center text-6xl mb-4 font-extrabold text-[#fff]">
-                Discover the Latest Trends in Textiles!
+            <h1 className="text-center text-6xl mb-4 font-extrabold text-[#fff]">
+              <span style={{ color: "red", fontWeight: "bold" }}>
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                  words={["Discover the Latest Trends in Textiles!"]}
+                  loop={5}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+                {/* Discover the Latest Trends in Textiles! */}
               </h1>
               <h4 className="leading-10 text-3xl w-3/4 mx-auto text-center text-[#ffffffdf]">
                 Stay Ahead with Our Textile Trend Insights: Explore the Latest
@@ -68,12 +95,24 @@ const Hero = () => {
           className="carousel-item relative w-full bg-no-repeat bg-cover"
         >
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
+            <a href="#slide1" className="btn btn-circle">
               ❮
             </a>
             <div>
-              <h1 className="text-center text-6xl mb-4 font-extrabold text-[#fff]">
-                Discover the Latest Trends in Textiles!
+            <h1 className="text-center text-6xl mb-4 font-extrabold text-[#fff]">
+              <span style={{ color: "red", fontWeight: "bold" }}>
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                  words={["Discover the Latest Trends in Textiles!"]}
+                  loop={5}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+                {/* Discover the Latest Trends in Textiles! */}
               </h1>
               <h4 className="leading-10 text-3xl w-3/4 mx-auto text-center text-[#ffffffdf]">
                 Stay Ahead with Our Textile Trend Insights: Explore the Latest
@@ -82,7 +121,7 @@ const Hero = () => {
               </h4>
             </div>
 
-            <a href="#slide4" className="btn btn-circle">
+            <a href="#slide1" className="btn btn-circle">
               ❯
             </a>
           </div>

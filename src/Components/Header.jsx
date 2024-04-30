@@ -42,13 +42,14 @@ const Header = () => {
       <div className="navbar bg-[#0A2D45] py-4 px-6 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                
               >
                 <path
                   strokeLinecap="round"
@@ -128,9 +129,9 @@ const Header = () => {
           </div>
           <Link
             to={"/"}
-            className=" font-extrabold   text-3xl"
+            className=" font-extrabold   lg:text-3xl"
           >
-            <span className="text-[#fff] text-3xl">
+            <span className="text-[#fff] lg:text-3xl">
               Textile <span className="text-[#01EEFF]">Trove</span>{" "}
             </span>
           </Link>
@@ -248,13 +249,13 @@ const Header = () => {
                 />
               </div>
 
-              <button onClick={handleLogOut} className="btn text-lg bg-[#fc1414d6] border-none text-white">
+              <button onClick={handleLogOut} className="btn lg:text-lg bg-[#fc1414d6] border-none text-white">
                 Log Out
               </button>
             </>
           ) : (
             <Link to={"/login"}>
-              <button className="btn text-lg bg-[#01EEFF] border-none">LogIn</button>
+              <button className="btn lg:text-lg bg-[#01EEFF] border-none">LogIn</button>
             </Link>
           )}
         </div>
