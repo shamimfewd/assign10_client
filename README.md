@@ -2,7 +2,7 @@ Assignment 10 B9
 B9 A10 Type-02 Requirements
 subCategory : textile Arts
 Project Name is : Textile Trove
-Live Link: 
+Live Link: https://shiny-lolly-255c04.netlify.app/
 
 Features
 Fast routing (you can go to any page without reload)
