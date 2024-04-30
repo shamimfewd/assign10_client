@@ -13,7 +13,8 @@ const CraftItems = ({ item }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{itemName}</h2>
-          <p>${price}</p>
+          <p className="font-bold text-orange-600">Price: ${price}</p>
+      
           <p>{shortDescription}</p>
           <div className="card-actions">
             <Link to={`/detailspage/${_id}`} className="w-full">

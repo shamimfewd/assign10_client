@@ -48,7 +48,7 @@ const DetailsPage = () => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{itemName}</h2>
-          <p>Rating: {rating}</p>
+          <p>Rating: {rating}.stars</p>
           <p>Price: ${price}</p>
           <p>Processing Time: {processingTime}hr</p>
           <p>Customize: {selectedCustomize}</p>
