@@ -63,7 +63,7 @@ const UpdatePage = () => {
       selectedStocks,
     };
 
-    fetch(`http://localhost:5000/itemData/${_id}`, {
+    fetch(`https://b9-assignment-10-server-sooty.vercel.app/itemData/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updatedItem),

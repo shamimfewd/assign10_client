@@ -57,7 +57,7 @@ const MyArtList = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/item/${user?.email}`)
+    fetch(`https://b9-assignment-10-server-sooty.vercel.app/item/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);

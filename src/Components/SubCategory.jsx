@@ -5,7 +5,7 @@ import CategoryItems from "../Pages/CategoryItems/CategoryItems";
 const SubCategory = () => {
   const loadedData = useLoaderData();
   const [categoryItem, setCategoryItem] = useState(loadedData);
-  console.log(loadedData);
+ 
 
   const handleClickSub = () => {
     // console.log("clicked");

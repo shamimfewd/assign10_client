@@ -22,12 +22,12 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/item"),
+        loader: () => fetch("https://b9-assignment-10-server-sooty.vercel.app/item"),
       },
       {
         path: "/allArtAndCraft",
         element: <AllArtAndCraft />,
-        loader: () => fetch("http://localhost:5000/item"),
+        loader: () => fetch("https://b9-assignment-10-server-sooty.vercel.app/item"),
       },
       {
         path: "/addCraftItem",
@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
             <DetailsPage />
           </PrivateRoutes>
         ),
-        loader: () => fetch("http://localhost:5000/item"),
+        loader: () => fetch("https://b9-assignment-10-server-sooty.vercel.app/item"),
       },
       {
         path: "/register",
@@ -73,13 +73,13 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/itemData/${params.id}`),
+          fetch(`https://b9-assignment-10-server-sooty.vercel.app/itemData/${params.id}`),
       },
 
       {
         path: "/subCategory",
         element: <SubCategory />,
-        loader: () => fetch("http://localhost:5000/cate"),
+        loader: () => fetch("https://b9-assignment-10-server-sooty.vercel.app/cate"),
       },
       // {
       //   path: "/categoryItems",

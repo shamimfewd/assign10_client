@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const CategoryItems = () => {
   const loadedData = useLoaderData();
   const [subCate, setSubCate] = useState([loadedData]);
-  console.log(loadedData);
+ 
   //   useEffect(() => {
   //     fetch(`http://localhost:5000/cate/${loadedData.category}`)
   //       .then((res) => res.json())

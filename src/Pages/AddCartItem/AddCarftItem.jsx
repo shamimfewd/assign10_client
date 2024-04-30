@@ -48,7 +48,7 @@ const AddCarftItem = () => {
       selectedStocks,
     };
 
-    fetch("http://localhost:5000/item", {
+    fetch("https://b9-assignment-10-server-sooty.vercel.app/item", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newItem),
