@@ -12,7 +12,6 @@ const UpdatePage = () => {
   const [selectedStocks, setSelectedStocks] = useState("");
   //   const { user } = useContext(AuthContext);
 
-  console.log(loadedData);
   const {
     _id,
     image,
@@ -48,6 +47,8 @@ const UpdatePage = () => {
     const userName = form.userName.value;
     const email = form.email.value;
     const processingTime = form.processingTime.value;
+    const selectedCustomize = form.selectedCustomize.value;
+    // const selectedCategory = form.selectedCategory.value
 
     const updatedItem = {
       image,
@@ -78,14 +79,14 @@ const UpdatePage = () => {
   };
   return (
     <div className="flex items-center justify-center">
-       <Helmet>
+      <Helmet>
         <title>TextileTrove - Update Craft</title>
       </Helmet>
       <form onSubmit={handleSubmit} className="w-4/5 ">
         <div className="bg-[#E8F0FE]  my-24 rounded-xl shadow-xl">
           <div className="pl-6 pt-10">
             <h3 className="text-3xl mb-4 text-[#000000ca] font-bold">
-              Update Craft and Item 
+              Update Craft and Item
             </h3>
           </div>
           <div className="flex  gap-x-4 p-6">
@@ -182,6 +183,7 @@ const UpdatePage = () => {
                 className="select select-bordered w-full"
                 value={selectedCustomize}
                 onChange={handleChangeCustomize}
+              
               >
                 <option disabled selected value={""}>
                   Select Option
@@ -218,7 +220,7 @@ const UpdatePage = () => {
                 onChange={handleChangeStock}
               >
                 <option disabled selected value={""}>
-                Select Option
+                  Select Option
                 </option>
                 <option value={"inStock"}>In Stock</option>
                 <option value={"madeToOrder"}>Made to Order</option>
