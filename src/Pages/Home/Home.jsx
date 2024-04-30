@@ -17,12 +17,15 @@ const Home = () => {
       </Helmet>
       <Hero />
       <About />
+      <div>
+        <h2 className="text-4xl text-center text-[#0A2D45] mb-6">Craft Items</h2>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item) => (
           <CraftItems key={item._id} item={item} />
         ))}
       </div>
-    
+
       <SubCategory />
     </div>
   );

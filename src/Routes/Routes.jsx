@@ -11,6 +11,7 @@ import PrivateRoutes from "../PrivateRouters/PrivateRoutes";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 import SubCategory from "../Components/SubCategory";
+// import CategoryItems from "../Pages/CategoryItems/CategoryItems";
 
 export const router = createBrowserRouter([
   {
@@ -80,6 +81,12 @@ export const router = createBrowserRouter([
         element: <SubCategory />,
         loader: () => fetch("http://localhost:5000/cate"),
       },
+      // {
+      //   path: "/categoryItems",
+      //   element: <CategoryItems />,
+      //   loader: () =>
+      //     fetch(`http://localhost:5000/cate`),
+      // },
     ],
   },
 ]);
