@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const AddCarftItem = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -19,6 +20,7 @@ const AddCarftItem = () => {
   const handleChangeStock = (e) => {
     setSelectedStocks(e.target.value);
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +49,7 @@ const AddCarftItem = () => {
       selectedStocks,
     };
 
-    console.log(newItem);
+  
 
     fetch("http://localhost:5000/item", {
       method: "POST",
@@ -62,12 +64,32 @@ const AddCarftItem = () => {
       });
   };
   return (
+    <div>
+       <div
+        className="bg-cover h-[15rem]  bg-no-repeat	bg-center	object-center"
+        style={{
+          backgroundImage:
+            "url(https://images.pexels.com/photos/8246743/pexels-photo-8246743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+        }}
+      >
+        <div className="flex justify-center items-center pt-16">
+          <div>
+            <h2 className="text-4xl text-[#0A2D45] mb-8">
+            Add Craft and Item
+            </h2>
+            <Link to={"/"} className="mt-6 text-2xl text-blue-600">
+              Home/
+            </Link>
+            <span>Add Craft and Item</span>
+          </div>
+        </div>
+      </div>
     <div className="flex items-center justify-center">
        <Helmet>
         <title>TextileTrove - Add Craft</title>
       </Helmet>
       <form onSubmit={handleSubmit} className="w-4/5 ">
-        <div className="bg-[#E8F0FE]  my-24 rounded-xl shadow-xl">
+        <div className="bg-[#E8F0FE]  my-6 rounded-xl shadow-xl">
           <div className="pl-6 pt-10">
             <h3 className="text-3xl mb-4 text-[#000000ca] font-bold">
               Add Craft and Item
@@ -255,12 +277,13 @@ const AddCarftItem = () => {
 
             <input
               type="submit"
-              className="btn w-full px-6  bg-[#00b38c] text-white text-2xl mb-6"
+              className="btn w-full px-6 bg-[#01EEFF]    text-2xl mb-6"
               value="Add Item"
             />
           </div>
         </div>
       </form>
+    </div>
     </div>
   );
 };

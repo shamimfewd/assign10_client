@@ -4,6 +4,7 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import { IoIosArrowDown } from "react-icons/io";
 
 const MyArtList = () => {
   const { user } = useContext(AuthContext);
@@ -50,7 +51,6 @@ const MyArtList = () => {
               const remainingItem = items.filter((itm) => itm._id !== _id);
               setFilterItems(remainingItem);
             }
-         
           });
       }
     });
@@ -67,13 +67,36 @@ const MyArtList = () => {
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>TextileTrove - My Craft List</title>
       </Helmet>
-    {/* Dropdown for filtering */}
-      <div className="text-center">
+
+      <div
+        className="bg-cover h-[15rem]  bg-no-repeat	bg-center	object-center"
+        style={{
+          backgroundImage:
+            "url(https://images.pexels.com/photos/8246743/pexels-photo-8246743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+        }}
+      >
+        <div className="flex justify-center items-center pt-16">
+          <div>
+            <h2 className="text-4xl text-[#0A2D45] mb-8">
+              My Art And Craft LIst
+            </h2>
+            <Link to={"/"} className="mt-6 text-2xl text-blue-600">
+              Home/
+            </Link>
+            <span>My Art And Craft LIst</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Dropdown for filtering */}
+      <div className="text-center mt-6">
         <details className="dropdown">
-          <summary className="m-1 btn">Filter By Customization Advantage</summary>
+          <summary className="m-1 btn bg-[#01EEFF] flex items-center">
+            <span>Filter By Customization Advantage</span> <IoIosArrowDown />
+          </summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li onClick={() => handleFilterItems("all")}>
               <a>All</a>
@@ -88,13 +111,20 @@ const MyArtList = () => {
         </details>
       </div>
 
-      <h1>All Art And Craft List</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto text-center mt-6">
+        <h2 className="text-4xl text-[#0A2D45] mb-6">My Art And Craft List</h2>
+      </div>
+
+      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
         {filterItmes.map((item) => (
           <div key={item._id} className="">
-            <div className="card  bg-base-100 shadow-xl">
+            <div className="card h-[35rem] cursor-pointer bg-base-100 shadow-xl">
               <figure>
-                <img src={item.image} alt="image" />
+                <img
+                  className="h-[15rem] hover:scale-125 transition-all"
+                  src={item.image}
+                  alt="image"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{item.itemName}</h2>
@@ -105,12 +135,12 @@ const MyArtList = () => {
                 <div className="card-actions justify-end">
                   <button
                     onClick={() => handleDelete(item._id)}
-                    className="btn"
+                    className="btn bg-orange-600"
                   >
                     Delete
                   </button>
                   <Link to={`/updatePage/${item._id}`}>
-                    <button className="btn">Update</button>
+                    <button className="btn bg-[#01EEFF]  ">Update</button>
                   </Link>
                 </div>
               </div>
@@ -124,7 +154,7 @@ const MyArtList = () => {
           //   item={item}
           //   items={items}
           //   setItems={setItems}
-       
+
           // />
         ))}
       </div>

@@ -56,11 +56,31 @@ const Register = () => {
   };
 
   return (
+    <div>
+    <div
+        className="bg-cover h-[15rem]  bg-no-repeat	bg-center	object-center"
+        style={{
+          backgroundImage:
+            "url(https://images.pexels.com/photos/8246743/pexels-photo-8246743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+        }}
+      >
+        <div className="flex justify-center items-center pt-16">
+          <div>
+            <h2 className="text-4xl text-[#0A2D45] mb-8">
+            Registration Form
+            </h2>
+            <Link to={"/"} className="mt-6 text-2xl text-blue-600">
+              Home/
+            </Link>
+            <span>Registration Form</span>
+          </div>
+        </div>
+      </div>
     <div className="flex justify-center items-center ">
       <Helmet>
         <title>TextileTrove - Register</title>
       </Helmet>
-      <div className="my-24 border p-6 rounded-xl lg:w-1/3 shadow-xl bg-[#E8F0FE]">
+      <div className="my-6 border p-6 rounded-xl lg:w-1/3 shadow-xl bg-[#E8F0FE]">
         <h3 className="text-3xl mb-6 text-[#000000ca] font-bold">
           Registration Form
         </h3>
@@ -141,6 +161,7 @@ const Register = () => {
           />
         </form>
       </div>
+    </div>
     </div>
   );
 };
