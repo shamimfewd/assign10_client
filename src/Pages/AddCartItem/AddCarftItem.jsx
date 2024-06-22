@@ -72,7 +72,7 @@ const AddCarftItem = () => {
         <div className="flex justify-center items-center pt-16">
           <div>
             <h2 className="text-4xl text-[#0A2D45] mb-8">Add Craft and Item</h2>
-            <Link to={"/"} className="mt-6 text-2xl text-blue-600">
+            <Link to={"/"} className="mt-6 text-2xl text-[#00b38c]">
               Home/
             </Link>
             <span>Add Craft and Item</span>
@@ -200,6 +200,7 @@ const AddCarftItem = () => {
                   name="processingTime"
                   className="w-full p-2 outline-none rounded-lg text-[#000000dc] bg-[#F8F8F8]"
                   placeholder="processing time"
+                  required
                 />
                 <br />
                 <br />
@@ -234,6 +235,7 @@ const AddCarftItem = () => {
                   name="email"
                   className="w-full p-2 outline-none rounded-lg text-[#000000dc] bg-[#F8F8F8]"
                   placeholder="user email"
+                  required
                 />
                 <br />
                 <br />
@@ -248,6 +250,7 @@ const AddCarftItem = () => {
                   name="userName"
                   className="w-full p-2 outline-none rounded-lg text-[#000000dc] bg-[#F8F8F8]"
                   placeholder="user name"
+                  required
                 />
                 <br />
                 <br />
@@ -266,13 +269,14 @@ const AddCarftItem = () => {
                 placeholder="short description"
                 cols="5"
                 rows="5"
+                required
               ></textarea>
               <br />
               <br />
 
               <input
                 type="submit"
-                className="btn w-full px-6 bg-[#01EEFF]    text-2xl mb-6"
+                className="btn w-full px-6 bg-[#00b38c] hover:bg-[#00b38c] text-2xl text-white  mb-6"
                 value="Add Item"
               />
             </div>

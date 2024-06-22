@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
-import image from "../../public/logo.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -9,9 +8,6 @@ const Header = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
-
-  const activeLink = "text-[#01EEFF] ";
-  const normalLink = "";
 
   const handleChangeTheme = (e) => {
     if (e.target.checked) {
@@ -39,17 +35,20 @@ const Header = () => {
 
   return (
     <div className="">
-      <div className="navbar bg-[#0A2D45] py-4 px-6 mx-auto">
+      <div className="navbar bg-[#FFFFFF] py-4 px-6 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost  lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                
               >
                 <path
                   strokeLinecap="round"
@@ -67,10 +66,10 @@ const Header = () => {
                 <NavLink
                   to={"/"}
                   style={{ fontSize: "16px" }}
-                  className={({ isActive }) =>
-                    isActive ? activeLink : normalLink
-                  }
+                  className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
                 >
+
+
                   Home
                 </NavLink>
               </li>
@@ -79,9 +78,7 @@ const Header = () => {
                 <NavLink
                   to={"/allArtAndCraft"}
                   style={{ fontSize: "16px" }}
-                  className={({ isActive }) =>
-                    isActive ? activeLink : normalLink
-                  }
+                  className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
                 >
                   All Art & craft Items
                 </NavLink>
@@ -92,9 +89,7 @@ const Header = () => {
                   <NavLink
                     to={"/addCraftItem"}
                     style={{ fontSize: "16px" }}
-                    className={({ isActive }) =>
-                      isActive ? activeLink : normalLink
-                    }
+                    className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
                   >
                     Add Craft Item
                   </NavLink>
@@ -106,45 +101,40 @@ const Header = () => {
                   <NavLink
                     to={"/myArt&CraftList"}
                     style={{ fontSize: "16px" }}
-                    className={({ isActive }) =>
-                      isActive ? activeLink : normalLink
-                    }
+                    className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
                   >
                     My Art&Craft List
                   </NavLink>
                 </li>
               )}
+
               <li>
                 <NavLink
                   to={"/register"}
                   style={{ fontSize: "16px" }}
-                  className={({ isActive }) =>
-                    isActive ? activeLink : normalLink
-                  }
+                  className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
                 >
                   Register
                 </NavLink>
               </li>
             </ul>
           </div>
-          <Link
-            to={"/"}
-            className=" font-extrabold   lg:text-3xl"
-          >
-            <span className="text-[#fff] lg:text-3xl">
-              Textile <span className="text-[#01EEFF]">Trove</span>{" "}
+          <Link to={"/"} className=" font-extrabold   lg:text-3xl">
+            <span className="text-[#FF0000] lg:text-3xl">
+              Textile <span className="text-[#00b38c]">Trove</span>{" "}
             </span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[#ffff]">
+          <ul
+            className="menu menu-horizontal px-1 "
+            style={{ color: "var(--text-color)" }}
+          >
             <li>
               <NavLink
                 to={"/"}
                 style={{ fontSize: "18px" }}
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
+                className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
               >
                 Home
               </NavLink>
@@ -154,9 +144,7 @@ const Header = () => {
               <NavLink
                 to={"/allArtAndCraft"}
                 style={{ fontSize: "18px" }}
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
+                className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
               >
                 All Art & craft Items
               </NavLink>
@@ -168,7 +156,7 @@ const Header = () => {
                   to={"/addCraftItem"}
                   style={{ fontSize: "18px" }}
                   className={({ isActive }) =>
-                    isActive ? activeLink : normalLink
+                    isActive ? "text-[#00b38c]" : ""
                   }
                 >
                   Add Craft Item
@@ -181,9 +169,7 @@ const Header = () => {
                 <NavLink
                   to={"/myArt&CraftList"}
                   style={{ fontSize: "18px" }}
-                  className={({ isActive }) =>
-                    isActive ? activeLink : normalLink
-                  }
+                  className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
                 >
                   My Art & Craft List
                 </NavLink>
@@ -194,9 +180,7 @@ const Header = () => {
               <NavLink
                 to={"/register"}
                 style={{ fontSize: "18px" }}
-                className={({ isActive }) =>
-                  isActive ? activeLink : normalLink
-                }
+                className={({ isActive }) => (isActive ? "text-[#00b38c]" : "")}
               >
                 Register
               </NavLink>
@@ -205,13 +189,12 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           <div>
-            <label className="swap swap-rotate  pr-6">
+            <label className="swap swap-rotate  ">
               {/* this hidden checkbox controls the state */}
               <input
                 type="checkbox"
                 checked={theme === "light" ? false : true}
                 onChange={handleChangeTheme}
-               
               />
 
               {/* sun icon */}
@@ -249,13 +232,18 @@ const Header = () => {
                 />
               </div>
 
-              <button onClick={handleLogOut} className="btn lg:text-lg bg-[#fc1414d6] border-none text-white">
+              <button
+                onClick={handleLogOut}
+                className="btn lg:text-lg bg-orange-600 hover:bg-orange-600 border-none text-white"
+              >
                 Log Out
               </button>
             </>
           ) : (
             <Link to={"/login"}>
-              <button className="btn lg:text-lg bg-[#01EEFF] border-none">LogIn</button>
+              <button className="btn lg:text-lg bg-[#00b38c] hover:bg-[#00b38c] text-white border-none">
+                LogIn
+              </button>
             </Link>
           )}
         </div>

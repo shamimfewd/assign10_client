@@ -57,7 +57,9 @@ const MyArtList = () => {
   };
 
   useEffect(() => {
-    fetch(`https://b9-assignment-10-server-sooty.vercel.app/item/${user?.email}`)
+    fetch(
+      `https://b9-assignment-10-server-sooty.vercel.app/item/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
@@ -94,7 +96,7 @@ const MyArtList = () => {
       {/* Dropdown for filtering */}
       <div className="text-center mt-6">
         <details className="dropdown">
-          <summary className="m-1 btn bg-[#01EEFF] flex items-center">
+          <summary className="m-1 btn bg-[#00b38c] hover:bg-[#00b38c] text-white flex items-center">
             <span>Filter By Customization Advantage</span> <IoIosArrowDown />
           </summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -115,7 +117,7 @@ const MyArtList = () => {
         <h2 className="text-4xl text-[#0A2D45] mb-6">My Art And Craft List</h2>
       </div>
 
-      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 p-2">
+      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6 p-2 max-w-7xl mx-auto">
         {filterItmes.map((item) => (
           <div key={item._id} className="">
             <div className="card h-[35rem] cursor-pointer bg-base-100 shadow-xl">
@@ -128,34 +130,30 @@ const MyArtList = () => {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{item.itemName}</h2>
-                <h3>{item.price}</h3>
+                <p className="font-bold text-orange-600">
+                  Price: ${item.price}
+                </p>
+                <p>Customize: {item.selectedCustomize}</p>
+                <p>Category: {item.selectedCategory}</p>
+                <p>Customize: {item.selectedStocks}</p>
+              
                 <p>{item.shortDescription}</p>
-                <p>{item.selectedCustomize}</p>
 
                 <div className="card-actions justify-end">
                   <button
                     onClick={() => handleDelete(item._id)}
-                    className="btn bg-orange-600"
+                    className="btn bg-orange-600 text-white"
                   >
                     Delete
                   </button>
                   <Link to={`/updatePage/${item._id}`}>
-                    <button className="btn bg-[#01EEFF]  ">Update</button>
+                    <button className="btn bg-[#00b38c] hover:bg-[#00b38c] text-white  ">Update</button>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-          // <>
-          //   <p>{item.selectedCustomize}</p>
-          // </>
-          // <ItemsCard
-          //   key={item._id}
-          //   item={item}
-          //   items={items}
-          //   setItems={setItems}
-
-          // />
+       
         ))}
       </div>
     </div>

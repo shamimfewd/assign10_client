@@ -60,7 +60,7 @@ const AllArtAndCraft = () => {
                   <td>{item.selectedCategory}</td>
                   <td>
                     <Link to={`/detailspage/${item._id}`}>
-                      <button className="btn bg-[#01EEFF] ">
+                      <button className="btn bg-[#00b38c] hover:bg-[#00b38c] text-white ">
                         View Details
                       </button>
                     </Link>

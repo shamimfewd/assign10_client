@@ -22,7 +22,7 @@ const CraftItems = ({ item }) => {
             <p>{shortDescription}</p>
             <div className="card-actions">
               <Link to={`/detailspage/${_id}`} className="w-full">
-                <button className="btn bg-[#01EEFF] w-full ">
+                <button className="btn bg-[#00b38c] hover:bg-[#00b38c] text-white w-full ">
                   View Details
                 </button>
               </Link>

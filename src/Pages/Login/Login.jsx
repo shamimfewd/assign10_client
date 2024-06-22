@@ -22,7 +22,6 @@ const Login = () => {
   const handleGoogleLogIn = () => {
     GoogleLogIn()
       .then((result) => {
-        console.log(result.user);
         if (result.user) {
           toast.success("Login Successfully");
           navigate(location?.state || "/");
@@ -121,7 +120,7 @@ const Login = () => {
               value="LogIn"
             />
           </form>
-          <p className="text-center">or</p>
+          <div className="divider">OR</div>
           <div className="flex items-center justify-center gap-x-4">
             <FcGoogle
               onClick={handleGoogleLogIn}

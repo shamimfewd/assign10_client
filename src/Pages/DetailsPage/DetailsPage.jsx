@@ -35,7 +35,7 @@ const DetailsPage = () => {
             <h2 className="text-4xl text-[#0A2D45] mb-8">
               Art And Craft Details
             </h2>
-            <Link to={"/"} className="mt-6 text-2xl text-blue-600">
+            <Link to={"/"} className="mt-6 text-2xl text-[#00b38c]">
               Home/
             </Link>
             <span> Details Page</span>
@@ -61,9 +61,9 @@ const DetailsPage = () => {
           </p>
           <div className="card-actions justify-end">
             <Link to={"/allArtAndCraft"}>
-              <button className="btn btn-primary">Go Back</button>
+              <button className="btn bg-[#00b38c] hover:bg-[#00b38c] text-white">Go Back</button>
             </Link>
-            <button className="btn bg-[#01EEFF] ">Add to Cart</button>
+            <button className="btn bg-[#00b38c] hover:bg-[#00b38c] text-white ">Add to Cart</button>
           </div>
         </div>
       </div>

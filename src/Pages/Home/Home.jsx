@@ -10,6 +10,7 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 
 const Home = () => {
   const loadedData = useLoaderData();
+
   const { loading } = useContext(AuthContext);
   const [items, setItems] = useState(loadedData);
 
@@ -34,13 +35,21 @@ const Home = () => {
           Craft Items
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
         {items.map((item) => (
           <CraftItems key={item._id} item={item} />
         ))}
       </div>
 
-      <SubCategory />
+      <div className="max-w-7xl mx-auto">
+        <div>
+          <h2 className="text-4xl text-center text-[#0A2D45]  my-24">
+            Category Items
+          </h2>
+        </div>
+        <SubCategory />
+      </div>
+
       <Contact />
     </div>
   );

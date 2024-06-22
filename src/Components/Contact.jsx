@@ -37,7 +37,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              className="p-2 rounded-lg w-full"
+              className="p-2 rounded-lg w-full border-none outline-none "
               placeholder="full name"
             />
             <br />
@@ -48,7 +48,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              className="p-2 rounded-lg w-full"
+              className="p-2 rounded-lg w-full border-none outline-none "
               placeholder="exemple@xyz.com"
             />
             <br />
@@ -59,7 +59,7 @@ const Contact = () => {
             <textarea
               name="message"
               id=""
-              className="p-2 rounded-lg w-full"
+              className="p-2 rounded-lg w-full border-none outline-none "
               cols="30"
               rows="10"
             ></textarea>
@@ -67,7 +67,7 @@ const Contact = () => {
             <br />
             <br />
 
-            <input type="submit" className="btn w-full" value="Send" />
+            <input type="submit" className="border-none outline-none btn w-full bg-[#00b38c] hover:bg-[#00b38c] text-white" value="Send" />
           </form>
         </div>
       </div>

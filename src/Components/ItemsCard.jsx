@@ -1,9 +1,9 @@
-// import { Link } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ItemsCard = ({ item, items, setItems, setFilterItems }) => {
-  // console.log(item.selectedCustomize);
+
 
   const {
     _id,
