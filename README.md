@@ -70,7 +70,7 @@ npm run dev
 - tailwind css
 
 
-## Characteristic 
+## Project Overview
 
 This website uses Reactjs to create a nice-looking design and features. It's specifically designed for the Textile Industry. It uses 'react-router dom' so you can easily navigate between pages without the page reloading each time. There are seven pages in total, with three accessible from the navigation bar and one dynamic page for item details and updated items.
 
