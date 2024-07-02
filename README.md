@@ -63,6 +63,11 @@ npm run dev
 - react simple typewriter
 - react awesome reveal
 
+## Technology
+- react.js
+- node.js
+- express.js
+- tailwind css
 
 
 ## Characteristic 
